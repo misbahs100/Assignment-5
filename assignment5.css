@@ -1,0 +1,30 @@
+
+.mealImage{
+    width: 250px;
+    height: 200px;
+    border-radius: 5px 5px 0 0;
+}
+/* .meal-h3{
+    padding: 5px;
+} */
+#mealContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 45px;
+    text-align: center;
+}
+.mealDiv{
+    cursor: pointer;
+}
+/* .mealDiv:hover{
+    border: 1px solid green;
+} */
+#mealDetail{
+    text-align: center;
+    
+}
+#mealDetail img{
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+}

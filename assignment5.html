@@ -8,9 +8,22 @@
 
     <!-- css file -->
     <link rel="stylesheet" href="assignment5.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
-<body>
+<body class="container">
+    <form class="col-md-6 m-auto py-5">
+        <div class="input-group mb-3">
+            <input id="mealInput" type="text" class="form-control" placeholder="Search for meal ...">
+            <div class="input-group-append">
+                <button id="searchBtn" type="button" class="btn btn-danger">Search</button>
+            </div>
+        </div>
+    </form>
     
+    <div id="mealDetail"></div>
+    <div id="mealContainer"></div>
 
     <script src="assignment5.js"></script>
 </body>
