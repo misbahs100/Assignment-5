@@ -1,9 +1,16 @@
 
 
-document.getElementById("searchBtn").addEventListener("click", function (){
+document.getElementById("searchBtn").addEventListener("click", function () {
     let mealInput = document.getElementById("mealInput").value;
+    console.log("meal input value:  ", mealInput);
+    document.getElementById("mealDetail").innerText="";
+    document.getElementById("mealContainer").innerText="";
+    if (mealInput == "") {
+        nothingFound(mealInput);
+    }
+    else {
     loadData(mealInput);
-    
+    }
 });
 
 // loadData(); function for fetching the data 
@@ -15,38 +22,39 @@ const loadData = (mealInput) => {  //parameter will be the input value
         })
 }
 
-const displayData = (data,mealInput) => {
+const displayData = (data, mealInput) => {
     console.log(data);
     const allMeals = data.meals;  // allMeals is an array
     console.log("all Meals: ", allMeals);
-    if(allMeals === null) {
+    if (allMeals === null) {
         nothingFound(mealInput);
     }
-    else{
+    else {
         const mealContainer = document.getElementById("mealContainer");
-    allMeals.forEach(meal => {
-        console.log("hello: ", meal.strMeal);
-       
-        const mealDiv = document.createElement("div");
-        mealDiv.className = "mealDiv";
-        // mealDiv.onclick = showDetail();  // meal is an array
-        mealDiv.innerHTML = `
+        mealContainer.style.display = "grid";
+        allMeals.forEach(meal => {
+            console.log("hello: ", meal.strMeal);
+
+            const mealDiv = document.createElement("div");
+            mealDiv.className = "mealDiv";
+            // mealDiv.onclick = showDetail();  // meal is an array
+            mealDiv.innerHTML = `
         <div onclick="mealClicked('${meal.strMeal}')"> 
         <img  class = "mealImage" src = "${meal.strMealThumb}"  >
         <h3 class = "meal-h3">${meal.strMeal}</h3>
         </div>
         `;
-        mealContainer.appendChild(mealDiv);
-        
-        
-    });
+            mealContainer.appendChild(mealDiv);
+
+
+        });
     }
 
 
 }
 // document.getElementsByClassName("mealDiv").addEventListener("click", showDetail);
 
-const  mealClicked = (name) =>{
+const mealClicked = (name) => {
     // console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxx");
     console.log(typeof name);
     console.log("xxxxxxxxx: ", name);
@@ -54,14 +62,14 @@ const  mealClicked = (name) =>{
     const mealDetail = document.getElementById("mealDetail");
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
     fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        showDetail(data);
-    })
+        .then(res => res.json())
+        .then(data => {
+            showDetail(data);
+        })
 
 }
 
-const showDetail = data =>{  // here, data is ..
+const showDetail = data => {  // here, data is ..
     console.log(data);
     const meal = data.meals[0];
     let mealDetail = document.getElementById("mealDetail");
@@ -83,12 +91,12 @@ const showDetail = data =>{  // here, data is ..
     </div>
     `;
     const ingredients = document.getElementById("ingredients");
-console.log("zzzzzzzzzz: ", meal.strIngredient3)
-    
+    console.log("zzzzzzzzzz: ", meal.strIngredient3)
 
-    
+
+
     // let valuesArray = Object.values(meal); 
-  
+
     // for (let value of valuesArray) { 
     //   console.log(value); 
     // } 
@@ -97,14 +105,27 @@ console.log("zzzzzzzzzz: ", meal.strIngredient3)
     // li.innerText = ;
 }
 
-const nothingFound = (mealInput) =>{
+const nothingFound = (mealInput) => {
     const mealContainer = document.getElementById("mealContainer");
     // mealContainer.style.border = "1px solid black";
-    mealContainer.style.display = "block";
-    const h1 = document.createElement("h1");
-    h1.innerText = "No meals found named " + "\'" + mealInput + "\'";
-    mealContainer.appendChild(h1);
     
+    if (mealInput == "") {
+        mealContainer.style.display = "block";
+        const h1 = document.createElement("h1");
+        h1.innerText = "You did not search anything!";
+        mealContainer.appendChild(h1);
+    }
+    else {
+        mealContainer.style.display = "block";
+        const h1 = document.createElement("h1");
+        h1.innerText = "No meals found named " + "\'" + mealInput + "\'";
+        mealContainer.appendChild(h1);
+    }
+
+   
     
+   
+
+
 }
 

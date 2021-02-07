@@ -43,7 +43,8 @@
 }
 .hungryMonster{
     text-align: center;
-    color: brown;
+    color: #dc3545; 
     margin-top: 20px;
     padding: 5px;
+    font-size: 45px;
 }
