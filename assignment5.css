@@ -12,6 +12,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 45px;
     text-align: center;
+    
 }
 .mealDiv{
     cursor: pointer;
@@ -25,14 +26,24 @@
     margin-right: 30%;
     display: flex;
     margin-bottom: 30px;
+    width: 500px;
+    /* border: 1px solid greenyellow; */
+    box-shadow: 5px 5px 10px gray;
+    
     
 }
 #mealDetail img{
-    width: 500px;
+    width: 480px;
     height: 250px;
     border-radius: 10px;
 }
 .detailText{
     font-weight: 800;
     margin-top: 14px;
+}
+.hungryMonster{
+    text-align: center;
+    color: brown;
+    margin-top: 20px;
+    padding: 5px;
 }

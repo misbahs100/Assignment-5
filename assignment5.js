@@ -99,10 +99,10 @@ console.log("zzzzzzzzzz: ", meal.strIngredient3)
 
 const nothingFound = (mealInput) =>{
     const mealContainer = document.getElementById("mealContainer");
-    mealContainer.style.border = "1px solid black";
+    // mealContainer.style.border = "1px solid black";
     mealContainer.style.display = "block";
     const h1 = document.createElement("h1");
-    h1.innerText = "Nothing found named " + "\'" + mealInput + "\'";
+    h1.innerText = "No meals found named " + "\'" + mealInput + "\'";
     mealContainer.appendChild(h1);
     
     
