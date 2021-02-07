@@ -4,9 +4,6 @@
     height: 200px;
     border-radius: 5px 5px 0 0;
 }
-/* .meal-h3{
-    padding: 5px;
-} */
 #mealContainer{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -16,10 +13,13 @@
 }
 .mealDiv{
     cursor: pointer;
+    transition: transform 0.5s;
 }
-/* .mealDiv:hover{
-    border: 1px solid green;
-} */
+.mealDiv:hover{
+    /* border: 1px solid green; */
+    transform: translateY(-10px);
+    
+}
 #mealDetail{
     /* text-align: center; */
     margin-left: 30%;
