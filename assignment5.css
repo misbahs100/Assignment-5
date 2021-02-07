@@ -1,4 +1,10 @@
-
+.hungryMonster{
+    text-align: center;
+    color: #dc3545; 
+    margin-top: 20px;
+    padding: 5px;
+    font-size: 45px;
+}
 .mealImage{
     width: 250px;
     height: 200px;
@@ -9,28 +15,22 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 45px;
     text-align: center;
-    
 }
 .mealDiv{
     cursor: pointer;
     transition: transform 0.5s;
 }
 .mealDiv:hover{
-    /* border: 1px solid green; */
-    transform: translateY(-10px);
-    
+    transform: translateY(-10px);  
 }
 #mealDetail{
-    /* text-align: center; */
     margin-left: 30%;
     margin-right: 30%;
     display: flex;
     margin-bottom: 30px;
     width: 500px;
     /* border: 1px solid greenyellow; */
-    box-shadow: 5px 5px 10px gray;
-    
-    
+    box-shadow: 5px 5px 10px gray;   
 }
 #mealDetail img{
     width: 480px;
@@ -40,11 +40,4 @@
 .detailText{
     font-weight: 800;
     margin-top: 14px;
-}
-.hungryMonster{
-    text-align: center;
-    color: #dc3545; 
-    margin-top: 20px;
-    padding: 5px;
-    font-size: 45px;
 }
