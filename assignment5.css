@@ -20,11 +20,19 @@
     border: 1px solid green;
 } */
 #mealDetail{
-    text-align: center;
+    /* text-align: center; */
+    margin-left: 30%;
+    margin-right: 30%;
+    display: flex;
+    margin-bottom: 30px;
     
 }
 #mealDetail img{
     width: 500px;
     height: 250px;
     border-radius: 10px;
+}
+.detailText{
+    font-weight: 800;
+    margin-top: 14px;
 }
